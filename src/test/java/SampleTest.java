@@ -4,7 +4,7 @@ import parsers.Pdf2Text;
 import testobjects.MoneyMovementObject;
 import static org.testng.Assert.*;
 
-public class SampleTests {
+public class SampleTest {
 
     @Test
     public void parseToHtmlExample() throws Exception {
