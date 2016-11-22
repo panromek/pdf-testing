@@ -8,17 +8,17 @@ import java.util.regex.Pattern;
 
 public class RegularExpressionsFactory {
 
-    public static List<Matcher> getMatchesList(String inputText, String regExp) {
-        Pattern pattern = Pattern.compile(regExp);
-        Matcher matcher = pattern.matcher(inputText);
-        List<Matcher> matchesList = new ArrayList<Matcher>();
-        while (matcher.find()) {
-            MatchResult result = matcher.toMatchResult();
-            Matcher transformedResult = (Matcher)result;
-            matchesList.add(transformedResult);
+    public static List<Matcher> getMatchesCollection(String inputText, String regExp) {
+        Pattern p = Pattern.compile(regExp);
+        Matcher m = p.matcher(inputText);
+        List<Matcher> matchesCollection = new ArrayList<Matcher>();
+        while (m.find()) {
+            MatchResult res = m.toMatchResult();
+            Matcher transformedResult = (Matcher)res;
+            matchesCollection.add(transformedResult);
         }
 
-        return matchesList;
+        return matchesCollection;
     }
 
 }
