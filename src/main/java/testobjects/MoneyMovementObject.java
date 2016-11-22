@@ -1,7 +1,7 @@
 package testobjects;
 
 import parsers.Pdf2Text;
-import utils.RegularExpressionsFactory;
+import utils.RegularExpressionsHelper;
 
 import java.util.List;
 import java.util.regex.Matcher;
@@ -19,17 +19,17 @@ public class MoneyMovementObject {
     }
 
     public String getClientName() {
-        List<Matcher> clientNameMatches = RegularExpressionsFactory.getMatchesCollection(fileText, CLIENT_NAME_PATTERN);
+        List<Matcher> clientNameMatches = RegularExpressionsHelper.getMatchesCollection(fileText, CLIENT_NAME_PATTERN);
         return clientNameMatches.get(0).group("clientName");
     }
 
     public String getAccountNumber() {
-        List<Matcher> accNumMatches = RegularExpressionsFactory.getMatchesCollection(fileText, ACCOUNT_NUMBER_PATTERN);
+        List<Matcher> accNumMatches = RegularExpressionsHelper.getMatchesCollection(fileText, ACCOUNT_NUMBER_PATTERN);
         return accNumMatches.get(0).group("accountNumber");
     }
 
     private Matcher getPeriodMatch() {
-        List<Matcher> periodMatches = RegularExpressionsFactory.getMatchesCollection(fileText, TIME_PERIOD_PATTERN);
+        List<Matcher> periodMatches = RegularExpressionsHelper.getMatchesCollection(fileText, TIME_PERIOD_PATTERN);
         return periodMatches.get(0);
     }
 
