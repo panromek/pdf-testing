@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class RegularExpressionsHelper {
 
-    public static List<Matcher> getMatchesCollection(String inputText, String regExp) {
+    public static List<Matcher> getMatchesList(String inputText, String regExp) {
         Pattern p = Pattern.compile(regExp);
         Matcher m = p.matcher(inputText);
         List<Matcher> matchesList = new ArrayList<Matcher>();

@@ -19,17 +19,17 @@ public class MoneyMovementObject {
     }
 
     public String getClientName() {
-        List<Matcher> clientNameMatches = RegularExpressionsHelper.getMatchesCollection(fileText, CLIENT_NAME_PATTERN);
+        List<Matcher> clientNameMatches = RegularExpressionsHelper.getMatchesList(fileText, CLIENT_NAME_PATTERN);
         return clientNameMatches.get(0).group("clientName");
     }
 
     public String getAccountNumber() {
-        List<Matcher> accNumMatches = RegularExpressionsHelper.getMatchesCollection(fileText, ACCOUNT_NUMBER_PATTERN);
+        List<Matcher> accNumMatches = RegularExpressionsHelper.getMatchesList(fileText, ACCOUNT_NUMBER_PATTERN);
         return accNumMatches.get(0).group("accountNumber");
     }
 
     private Matcher getPeriodMatch() {
-        List<Matcher> periodMatches = RegularExpressionsHelper.getMatchesCollection(fileText, TIME_PERIOD_PATTERN);
+        List<Matcher> periodMatches = RegularExpressionsHelper.getMatchesList(fileText, TIME_PERIOD_PATTERN);
         return periodMatches.get(0);
     }
 
